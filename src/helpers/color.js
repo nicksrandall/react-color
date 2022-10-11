@@ -32,11 +32,10 @@ export const toState = (data, oldHue) => {
     hsl.h = oldHue || 0
     hsv.h = oldHue || 0
   }
-  const transparent = hex === '00000000'
 
   return {
     hsl,
-    hex: transparent ? 'transparent' : `#${ hex }`,
+    hex: `#${ hex }`,
     rgb,
     hsv,
     oldHue: data.h || oldHue || hsl.h,
