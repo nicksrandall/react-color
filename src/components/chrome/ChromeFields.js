@@ -12,21 +12,12 @@ export class ChromeFields extends React.Component {
   constructor(props) {
     super()
 
-    if (props.hsl.a !== 1 && props.view === "hex") {
-      this.state = {
-        view: "rgb"
-      };
-    } else {
-      this.state = {
-        view: props.view,
-      }
+    this.state = {
+      view: props.view,
     }
   }
 
   static getDerivedStateFromProps(nextProps, state) {
-    if (nextProps.hsl.a !== 1 && state.view === 'hex') {
-      return { view: 'rgb' }
-    }
     return null
   }
 
